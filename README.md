@@ -8,6 +8,18 @@ This is a small file that can help you to debug your css in a wireframe style.
     git clone https://github.com/Sanusihassan/css-debugger.git
 ```
 
+### Install Using npm
+
+```bash
+    npm install css-debugger
+```
+
+### Include File Using cdn.jsdelivr
+
+```html
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Sanusihassan/css-debugger/dist/css-debugger.min.css">
+```
+
 ## Usage
 
 ```html
