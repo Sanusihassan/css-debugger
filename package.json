@@ -1,6 +1,6 @@
 {
   "name": "css-debugger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a small file that can help you to debug your css in a wireframe style.",
   "main": "dist/css-debugger.css",
   "scripts": {

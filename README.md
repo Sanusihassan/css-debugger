@@ -31,6 +31,7 @@ This will add `outline: 1px solid #2d3436` to every single element inside the bo
 
 ![debugging](./image/debugging.png)
 
+This will add the outline only to the direct childrens of the section.
 
 ```html
     <section data-debug="each">
@@ -39,15 +40,14 @@ This will add `outline: 1px solid #2d3436` to every single element inside the bo
         <div>item 3</div>
     </section>
 ```
-This will add the outline only to the direct childrens of the section.
+
+This will add the outline to the section itself and not it's children.
 
 ```html
     <section data-debug="self">
         ...
     </section>
 ```
-
-This will add the outline to the section itself and not it's children.
 
 ## How To Turn Off The Debugging On A Specific Area?
 
@@ -78,6 +78,7 @@ This will turn off the debugging on each direct children of the section but not 
 ```
 
 This will turn off the debugging on every single child inside the section including sub childrens.
+
 ```html
     <body data-debug="*">
         <section data-debug-all="off">
@@ -91,7 +92,7 @@ This will turn off the debugging on every single child inside the section includ
 
 ## Customizing the outline
 
-If you want to change the outline color for example use the `--debug` vaiable.
+If you want to change the outline color for example, use the `--debug` vaiable.
 
 It is defined as follows:
 
