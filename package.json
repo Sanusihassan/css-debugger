@@ -1,0 +1,20 @@
+{
+  "name": "css-debugger",
+  "version": "1.0.0",
+  "description": "This is a small file that can help you to debug your css in a wireframe style.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanusihassan/css-debugger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sanusihassan/css-debugger/issues"
+  },
+  "homepage": "https://github.com/Sanusihassan/css-debugger#readme"
+}
