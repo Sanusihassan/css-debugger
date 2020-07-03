@@ -1,0 +1,17 @@
+:root {
+  --deubg: 1px solid #2d3436;
+}
+
+[data-debug="self"], [data-debug="self"][debugging="on"],
+[data-debug="each"] > *,
+[data-debug="each"] > *[debugging="on"],
+[data-debug="*"] *,
+[data-debug="*"] *[debugging="on"] {
+  outline: var(--deubg);
+}
+
+[data-debug-self="off"],
+[data-debug-each="off"] > *,
+[data-debug-all="off"] * {
+  outline: none;
+}
