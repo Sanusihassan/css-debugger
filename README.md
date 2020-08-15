@@ -99,7 +99,7 @@ It is defined as follows:
 ```css
     :root {
         /* change color or size by modifing this variable */
-        --deubg: 1px solid #2d3436;
+        --debug: 1px solid #2d3436;
     }
 ```
 
