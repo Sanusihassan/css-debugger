@@ -1,0 +1,126 @@
+.css-debugger-elements {
+    @extend %box;
+    min-height: 500px;
+    max-height: calc(100vh - 3rem);
+
+    .card-header {
+        .icons {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .card-body {
+        padding: 0;
+
+        .code {
+            min-height: 15px;
+
+            pre {
+                word-wrap: break-word;
+                word-break: break-all;
+                cursor: text;
+            }
+        }
+
+        .elements {
+            @include extend("relative");
+
+            .copy-icon {
+                @include extend("absolute");
+                right: 0;
+                top: 17%;
+                // transform: translateY(-50%);
+                @include extend("top-level");
+                color: white;
+
+            }
+        }
+
+        .info-div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            // &,
+            // &>* {
+            //     @include extend("debug");
+            // }
+
+            .icon {
+                @include extend("fill");
+                display: flex;
+                justify-content: center;
+                min-height: 126px;
+                align-items: center;
+
+                svg {
+                    border-radius: 50% !important;
+                    width: 41.59px;
+                    height: 41.59px;
+                }
+            }
+        }
+    }
+
+    .dev-tools {
+        // list-style-type: none;
+        @include extend("nav nav-tabs d-flex flex-row justify-content-between border-top relative");
+
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        li {
+            @include extend("nav-item");
+            flex: 1 0 33.333%;
+            padding: 0.3em 0.2em;
+            display: flex;
+            align-items: center;
+        }
+
+        &:first-child.active~.slider {
+            left: 0;
+        }
+
+        :nth-child(2).active~.slider {
+            left: 33.333%;
+        }
+
+        :nth-child(3).active~.slider {
+            left: 33.333 * 2%;
+        }
+
+        .slider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 33.333%;
+            height: 2.5px;
+            background-color: $chrome-dev-color;
+            transition: left 100ms;
+        }
+
+
+        // ul.tabs li a {
+        //   color: black;
+        //   text-decoration: none;
+        // }
+        // &,
+        // >* {
+        //     @include extend("debug");
+        // }
+
+        // .active-tab {
+        //     @include extend("absolute");
+        //     height: 3px;
+        //     @include bg($chrome-dev-color);
+        //     bottom: 0;
+        //     width: 63.746px + (3.200 * 2);
+        // }
+
+
+    }
+}

@@ -1,0 +1,172 @@
+@use "sass:math";
+@import "./api";
+
+.app {
+    height: 5000px;
+    @include extend("relative");
+
+    .el-info {
+        @extend %top-level-1;
+    }
+
+    .inspector {
+        @include extend("fixed");
+        top: 15%;
+        right: 25%;
+        cursor: pointer;
+        @extend %top-level;
+
+        .css-debugger-btn {
+            @extend %reset-btn;
+            display: block;
+        }
+
+        svg {
+            display: block;
+            width: 30px;
+            height: 30px;
+            transition: stroke .3s;
+
+            &.clicked {
+                stroke: $chrome-dev-color;
+            }
+        }
+    }
+
+
+    %box {
+        @include apply("card");
+        width: 310px;
+    }
+
+    @import "./elements-editor";
+
+    .el-info {
+        @extend %box;
+        @extend %debug-bg;
+        background: #fefefe;
+        min-width: 300px;
+        padding: 16px;
+        @include extend("absolute");
+    }
+
+    .box-model {
+        font-size: 14px;
+        user-select: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        align-items: center;
+        flex-wrap: wrap;
+
+        .border-box {
+            @include bg(#FBDC9E);
+        }
+
+        .margin-box {
+            @extend %debug-bg;
+            @include extend("w-100 h-100 relative fill");
+
+            display: flex;
+            flex-flow: row wrap;
+            min-height: 126px;
+            // padding-top: 5px;
+            // padding-left: 5px;
+            padding: 5px;
+            align-items: center;
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+            // ._t {
+            //     align-items: end;
+            // }
+
+            .title {
+                align-self: flex-start;
+
+                display: flex;
+                align-items: flex-start;
+
+                .text {
+                    text-align: left;
+                }
+
+                .top {
+                    width: 65%;
+                    display: inline-flex;
+                    justify-content: center;
+                    margin-right: auto;
+                }
+            }
+
+            .left {
+                margin-left: auto
+            }
+
+            .title,
+            .bottom {
+                @include extend("fill");
+                text-align: center;
+            }
+
+            .bottom {
+                align-self: flex-end;
+            }
+        }
+
+        .padding-box {
+            @include bg(#C4D08C);
+            margin: auto;
+            min-width: 50%;
+            width: 75%;
+            max-width: 100%;
+            padding: 5px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            grid-column: 1 / -1;
+            grid-row: 2 / -2;
+
+            z-index: 1;
+
+            .p {
+                display: flex;
+                justify-content: space-between;
+
+                .text-left {
+                    text-align: left;
+                }
+
+                .top {
+                    flex: 0 1 52%;
+                    text-align: left;
+                }
+
+                @include extend("fill");
+            }
+
+            .bottom {
+                @include extend("fill");
+            }
+
+            .content-box {
+                @include bg(#8CB6C1);
+                font-size: 14px;
+                @include extend("available");
+            }
+        }
+
+        .info-p {
+            font-size: 14px;
+            margin-top: 16px;
+            grid-column: 1/-1;
+            margin-bottom: 0;
+        }
+    }
+
+    .el-name {
+        color: purple;
+        margin-bottom: 4px;
+    }
+}

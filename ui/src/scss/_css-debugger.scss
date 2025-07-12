@@ -1,0 +1,39 @@
+@import "./variables";
+
+%deb {
+    &#{ug} {
+
+        &,
+        &-all *,
+        &-each>* {
+            outline: 1px solid $debug-color;
+        }
+
+        &-bg {
+            background-color: #F8CB9C;
+
+            &-opacity {
+                background-color: rgba(#F8CB9C, .5);
+            }
+        }
+    }
+}
+
+@mixin css-debugger-data-selectors {
+
+    [data-debug="self"],
+    [data-debug="each"]>*,
+    [data-debug="*"] * {
+
+        &,
+        &[debugging="on"] {
+            @extend %debug;
+        }
+    }
+
+    [data-debug-self="off"],
+    [data-debug-each="off"]>*,
+    [data-debug-all="off"] * {
+        outline: none;
+    }
+}

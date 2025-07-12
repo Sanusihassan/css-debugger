@@ -1,0 +1,95 @@
+@import "./scss/css-debugger";
+@import "./scss/variables";
+
+@import "cssmolecule";
+@import "custom-bs";
+
+@import "./scss/api";
+
+@include reboot;
+@include root;
+@include list-group;
+@include api;
+@include nav;
+
+@mixin bg($color: "") {
+    @if($color =="") {
+        background-color: black;
+    }
+
+    @else {
+        background-color: $color;
+    }
+}
+
+$max-value: 2147483647;
+
+%top-level {
+    z-index: $max-value;
+
+    &-1 {
+        z-index: $max-value - 1;
+    }
+}
+
+@include card;
+
+
+body[data-start-debugger] {
+    * {
+        &>* :hover {
+            @extend %debug;
+        }
+    }
+
+    .css-debugger-handle {
+
+        &,
+        & * {
+            outline: none;
+        }
+    }
+}
+
+.highlighter {
+    @include extend("fixed");
+    ;
+    @extend %debug;
+    @extend %top-level;
+}
+
+
+@import "./scss/app";
+
+@import "./scss/prism";
+
+%reset-btn {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    /* Remove excess padding and border in Firefox 4+ */
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
